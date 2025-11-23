@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midas Store | iPhones Sellados, Usados y Reacondicionados</title>
+    <meta name="description" content="Especialistas en productos Apple. iPhones sellados, usados, reacondicionados y testers. Envíos a todo el país.">
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #7FB448;
+            --secondary-color: #F3F2D8;
+            --accent-color: #9BCB5C;
+            --text-dark: #2d2d2d;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --dark-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .navbar-brand span {
+            color: var(--text-dark);
+            font-weight: 400;
+            font-size: 0.9rem;
+            margin-left: 0.3rem;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #2d2d2d 100%);
+            color: white;
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.04;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, var(--primary-color) 35px, var(--primary-color) 70px);
+            pointer-events: none;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(127, 180, 72, 0.2);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(127, 180, 72, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            margin-top: 3rem;
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-main {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-main:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
+        }
+
+        .hero-image-main img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(127, 180, 72, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            background: #6da03a;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(127, 180, 72, 0.4);
+            color: white;
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-custom:hover {
+            background: white;
+            color: var(--dark-bg);
+            transform: translateY(-2px);
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            background: #f8f9fa;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-badge.sellado {
+            background: var(--primary-color);
+        }
+
+        .product-badge.usado {
+            background: #6c757d;
+        }
+
+        .product-badge.reacondicionado {
+            background: #0dcaf0;
+        }
+
+        .product-badge.tester {
+            background: #ffc107;
+            color: #000;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-price small {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .btn-add-cart {
+            background: var(--dark-bg);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--primary-color);
+            transform: scale(1.02);
+        }
+
+        /* Filters */
+        .filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .filter-btn {
+            margin: 0.3rem;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid #eee;
+            background: white;
+            color: var(--text-dark);
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        /* About Section */
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            border-color: var(--primary-color);
+        }
+
+        .feature-card-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(127, 180, 72, 0.3);
+        }
+
+        .feature-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .feature-card-text {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 2px solid #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-main {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .about-image-main img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-image-badge {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .about-image-badge-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .about-image-badge-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .contact-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.02;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, var(--primary-color) 35px, var(--primary-color) 70px);
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(127, 180, 72, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info-card {
+            background: white;
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            height: 100%;
+            border: 2px solid #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(127, 180, 72, 0.05);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(127, 180, 72, 0.3);
+        }
+
+        .contact-details h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .contact-details p {
+            margin-bottom: 0.3rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-form-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 2px solid #f8f9fa;
+        }
+
+        .form-floating {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-floating label {
+            color: var(--text-light);
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 1rem 1.2rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(127, 180, 72, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .social-contact {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-contact-btn {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-contact-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .social-contact-btn.whatsapp:hover {
+            background: #1faa52;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            color: white;
+        }
+
+        .social-contact-btn.instagram {
+            background: linear-gradient(135deg, #833AB4, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        .social-contact-btn.instagram:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(225, 48, 108, 0.4);
+            color: white;
+        }
+
+        .map-placeholder {
+            background: #f8f9fa;
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+            border: 2px dashed #ddd;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 4rem 0 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, var(--primary-color) 35px, var(--primary-color) 70px);
+            pointer-events: none;
+        }
+
+        footer .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        footer h5 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        footer ul {
+            padding-left: 0;
+        }
+
+        footer li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-description {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            position: relative;
+            max-width: 500px;
+        }
+
+        .search-bar input {
+            border-radius: 50px;
+            padding: 0.8rem 3rem 0.8rem 1.5rem;
+            border: 2px solid #eee;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+            color: white;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .spinner-border {
+            color: var(--primary-color);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .empty-state i {
+            font-size: 5rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        /* Product Modal */
+        .modal-header {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .product-detail-img {
+            border-radius: 15px;
+            max-height: 400px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .spec-value {
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-image-main {
+                transform: perspective(1000px) rotateY(0deg);
+                margin-top: 3rem;
+            }
+
+            .about-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-image-badge {
+                bottom: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 5rem 0 4rem;
+                min-height: auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+            .filter-btn {
+                font-size: 0.85rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .about-text {
+                font-size: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .about-image-badge {
+                bottom: 15px;
+                right: 15px;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .about-image-badge-number {
+                font-size: 1.5rem;
+            }
+
+            .about-image-badge-text {
+                font-size: 0.8rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .feature-card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .social-contact {
+                flex-direction: column;
+            }
+
+            .contact-form-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .map-placeholder {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-crown"></i> MIDAS <span>Store</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-link text-dark position-relative me-3" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">
+                        <i class="fab fa-apple me-2"></i> Especialistas en Apple
+                    </div>
+                    <h1 class="hero-title">
+                        Tu <span class="highlight">iPhone</span> al Mejor Precio
+                    </h1>
+                    <p class="hero-subtitle">
+                        iPhones sellados, usados, reacondicionados y testers. Encontrá el equipo perfecto para vos. Envíos a todo el país con seguimiento.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#productos" class="btn btn-primary-custom">
+                            <i class="fab fa-apple me-2"></i> Ver Productos
+                        </a>
+                        <a href="https://wa.me/5491234567890" class="btn btn-secondary-custom" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i> Consultar
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">100%</span>
+                            <span class="hero-stat-label">Garantía</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">Envíos</span>
+                            <span class="hero-stat-label">Todo el País</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">24/48hs</span>
+                            <span class="hero-stat-label">Entrega</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block hero-image-wrapper">
+                    <div class="hero-image-main">
+                        <img src="https://images.unsplash.com/photo-1592286927505-c5b0e5470d1c?w=700&h=700&fit=crop" alt="iPhone Products">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h5 class="feature-title">Hacemos Envíos</h5>
+                        <p class="text-muted">Al país con Andreani<br>A la ciudad con cadetes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h5 class="feature-title">Equipos Sellados</h5>
+                        <p class="text-muted">iPhones nuevos en caja</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h5 class="feature-title">Medios de Pago</h5>
+                        <p class="text-muted">Efectivo, Crypto (USDT)</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h5 class="feature-title">Promos Semanales</h5>
+                        <p class="text-muted">Descuentos increíbles</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="productos">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold">Nuestros Productos</h2>
+                <p class="lead text-muted">Seleccioná el iPhone perfecto para vos</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar mx-auto mb-4">
+                <input type="text" id="searchInput" class="form-control" placeholder="Buscar iPhone...">
+                <button type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="filter-title">
+                    <i class="fas fa-filter me-2"></i> Condición del Equipo
+                </div>
+                <div id="categoryFilters">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="sellado">Sellados</button>
+                    <button class="filter-btn" data-category="usado">Usados</button>
+                    <button class="filter-btn" data-category="reacondicionado">Reacondicionados</button>
+                    <button class="filter-btn" data-category="tester">Testers</button>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state d-none" id="emptyState">
+                <i class="fas fa-inbox"></i>
+                <h4 class="mt-3">No se encontraron productos</h4>
+                <p class="text-muted">Intentá con otra búsqueda o categoría</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light about-section" id="nosotros">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0 about-content">
+                    <div class="about-badge">
+                        <i class="fas fa-crown me-2"></i> Especialistas en Apple
+                    </div>
+                    <h2 class="about-title">
+                        Sobre <span class="about-highlight">Midas Store</span>
+                    </h2>
+                    <p class="about-text">
+                        Somos especialistas en productos Apple. Ofrecemos <strong>iPhones sellados, usados, reacondicionados y testers</strong> al mejor precio del mercado.
+                    </p>
+                    <p class="about-text">
+                        Cada semana tenemos <strong>promos nuevas</strong> para ofrecerte, desde accesorios hasta iPhones sellados o usados. ¡No dudes en aprovechar estos grandes descuentos!
+                    </p>
+                    <p class="about-text">
+                        Te ayudamos a elegir las mejores promos, accesorios increíbles y súper útiles para vos o tus amigos.
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Calidad</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">Envíos</span>
+                            <span class="stat-label">Nacionales</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">Garantía</span>
+                            <span class="stat-label">Segura</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 about-image-wrapper">
+                    <div class="about-image-main">
+                        <img src="equipos-sellados.jpg" alt="Equipos Sellados" class="img-fluid" onerror="this.src='https://images.unsplash.com/photo-1611472173362-3f53dbd65d80?w=700&h=700&fit=crop'">
+                        <div class="about-image-badge">
+                            <span class="about-image-badge-number">100%</span>
+                            <span class="about-image-badge-text">Originales</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <h4 class="feature-card-title">Equipos Sellados</h4>
+                        <p class="feature-card-text">
+                            ¿Buscás un equipo iPhone nuevo en caja sellada? Tenemos muchas opciones para vos. Modelos Plus, Pro y Pro Max.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h4 class="feature-card-title">Hacemos Envíos</h4>
+                        <p class="feature-card-text">
+                            Enviamos al país con la empresa Andreani (código de seguimiento). A la ciudad con cadetes privados.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-percent"></i>
+                        </div>
+                        <h4 class="feature-card-title">Nuestras Promos</h4>
+                        <p class="feature-card-text">
+                            Cada semana tenemos promos nuevas. Accesorios increíbles y súper útiles para vos o tus amigos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 contact-section" id="contacto">
+        <div class="contact-pattern"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-envelope me-2"></i> Contacto
+                </div>
+                <h2 class="section-title">¿Tenés Dudas?</h2>
+                <p class="section-subtitle">
+                    Estamos para ayudarte. Consultá por WhatsApp o Instagram.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Contact Info -->
+                <div class="col-lg-5">
+                    <div class="contact-info-card">
+                        <h3 class="mb-4 fw-bold">
+                            <i class="fas fa-info-circle me-2" style="color: var(--primary-color);"></i>
+                            Información de Contacto
+                        </h3>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Ubicación</h5>
+                                <p><strong>Buenos Aires, Argentina</strong></p>
+                                <p class="mb-0">Envíos a todo el país</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Contacto Directo</h5>
+                                <p class="mb-2">
+                                    <i class="fab fa-whatsapp me-2" style="color: #25D366;"></i>
+                                    <a href="https://wa.me/5491234567890">WhatsApp</a>
+                                </p>
+                                <p class="mb-0">
+                                    <i class="fab fa-instagram me-2" style="color: #E1306C;"></i>
+                                    <a href="https://instagram.com/midas.storeok" target="_blank">@midas.storeok</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Medios de Pago</h5>
+                                <p class="mb-1"><strong>Efectivo:</strong> Dólares o pesos argentinos</p>
+                                <p class="mb-0"><strong>Crypto:</strong> USDT, Binance Pay</p>
+                            </div>
+                        </div>
+
+                        <div class="social-contact">
+                            <a href="https://wa.me/5491234567890?text=Hola!%20Tengo%20una%20consulta" class="social-contact-btn whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp fa-lg"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="https://instagram.com/midas.storeok" class="social-contact-btn instagram" target="_blank">
+                                <i class="fab fa-instagram fa-lg"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
+                        <h3 class="mb-4 fw-bold">
+                            <i class="fas fa-paper-plane me-2" style="color: var(--primary-color);"></i>
+                            Envianos tu Consulta
+                        </h3>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
+                                        <label for="name">
+                                            <i class="fas fa-user me-2"></i> Nombre completo
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control" id="email" placeholder="Tu email" required>
+                                        <label for="email">
+                                            <i class="fas fa-envelope me-2"></i> Email
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Tu teléfono" required>
+                                        <label for="phone">
+                                            <i class="fas fa-phone me-2"></i> Teléfono / WhatsApp
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="subject" required>
+                                            <option value="">Seleccionar...</option>
+                                            <option value="consulta">Consulta de Producto</option>
+                                            <option value="stock">Consulta de Stock</option>
+                                            <option value="precio">Consulta de Precio</option>
+                                            <option value="envio">Consulta de Envío</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                        <label for="subject">
+                                            <i class="fas fa-tag me-2"></i> Motivo de consulta
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" placeholder="Tu mensaje" required></textarea>
+                                <label for="message">
+                                    <i class="fas fa-comment-dots me-2"></i> Mensaje
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                <i class="fas fa-paper-plane me-2"></i> Enviar Consulta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <span class="footer-brand">
+                        <i class="fa-solid fa-crown"></i> MIDAS Store
+                    </span>
+                    <p class="footer-description">
+                        Especialistas en productos Apple. iPhones sellados, usados, reacondicionados y testers al mejor precio. Envíos a todo el país.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/midas.storeok" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5491234567890" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-6 mb-4">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Inicio</a></li>
+                        <li><a href="#productos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Productos</a></li>
+                        <li><a href="#nosotros"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Nosotros</a></li>
+                        <li><a href="#contacto"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6 mb-4">
+                    <h5>Productos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#productos"><i class="fab fa-apple me-2"></i>iPhone Sellados</a></li>
+                        <li><a href="#productos"><i class="fas fa-mobile-alt me-2"></i>iPhone Usados</a></li>
+                        <li><a href="#productos"><i class="fas fa-redo me-2"></i>Reacondicionados</a></li>
+                        <li><a href="#productos"><i class="fas fa-vial me-2"></i>Testers</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Información</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fas fa-shipping-fast me-2"></i>Envíos</a></li>
+                        <li><a href="#"><i class="fas fa-credit-card me-2"></i>Medios de Pago</a></li>
+                        <li><a href="#"><i class="fas fa-shield-alt me-2"></i>Garantías</a></li>
+                        <li><a href="#"><i class="fas fa-percent me-2"></i>Promociones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4" style="opacity: 0.2;">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0" style="color: rgba(255,255,255,0.6);">
+                        &copy; 2025 Midas Store - Todos los derechos reservados
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none me-3" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+                        Términos y Condiciones
+                    </a>
+                    <a href="#" class="text-decoration-none" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+                        Política de Privacidad
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+                <i class="fas fa-shopping-cart me-2"></i> Mi Carrito
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItems"></div>
+            <div class="mt-auto">
+                <hr>
+                <div class="d-flex justify-content-between mb-3">
+                    <strong>Total:</strong>
+                    <strong class="text-primary fs-4" id="cartTotal">$0</strong>
+                </div>
+                <button class="btn btn-primary-custom w-100 mb-2" onclick="checkout()">
+                    <i class="fas fa-check me-2"></i> Finalizar Compra
+                </button>
+                <button class="btn btn-outline-danger w-100" onclick="clearCart()">
+                    <i class="fas fa-trash me-2"></i> Vaciar Carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProductName"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalProductImage" src="" alt="" class="product-detail-img">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <span class="badge" id="modalProductBadge"></span>
+                            </div>
+                            <h4 class="mb-3" id="modalProductPrice"></h4>
+                            <p id="modalProductDescription"></p>
+
+                            <h6 class="mt-4 mb-3">Especificaciones:</h6>
+                            <div id="modalProductSpecs">
+                                <!-- Specs will be loaded here -->
+                            </div>
+
+                            <button class="btn btn-primary-custom w-100 mt-4" onclick="addToCartFromModal()">
+                                <i class="fas fa-shopping-cart me-2"></i> Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5491234567890?text=Hola!%20Vengo%20desde%20la%20web" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Products Database - iPhones
+        const products = [
+            {
+                id: 1,
+                name: 'iPhone 15 Pro Max',
+                category: 'sellado',
+                price: 1450000,
+                image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop',
+                badge: 'Sellado',
+                stock: true,
+                description: 'iPhone 15 Pro Max nuevo en caja sellada. Incluye todos los accesorios originales.',
+                specs: {
+                    'Pantalla': '6.7" Super Retina XDR',
+                    'Procesador': 'A17 Pro',
+                    'Cámara': '48MP + 12MP + 12MP',
+                    'Almacenamiento': '256GB',
+                    'Batería': 'Hasta 29 horas de video'
+                }
+            },
+            {
+                id: 2,
+                name: 'iPhone 14 Pro',
+                category: 'sellado',
+                price: 1150000,
+                image: 'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop',
+                badge: 'Sellado',
+                stock: true,
+                description: 'iPhone 14 Pro sellado con garantía oficial Apple.',
+                specs: {
+                    'Pantalla': '6.1" Super Retina XDR',
+                    'Procesador': 'A16 Bionic',
+                    'Cámara': '48MP + 12MP + 12MP',
+                    'Almacenamiento': '128GB',
+                    'Dynamic Island': 'Sí'
+                }
+            },
+            {
+                id: 3,
+                name: 'iPhone 13',
+                category: 'usado',
+                price: 650000,
+                image: 'https://images.unsplash.com/photo-1632661674446-b0b789841ae4?w=400&h=400&fit=crop',
+                badge: 'Usado',
+                stock: true,
+                description: 'iPhone 13 en excelente estado, batería al 90%.',
+                specs: {
+                    'Pantalla': '6.1" Super Retina XDR',
+                    'Procesador': 'A15 Bionic',
+                    'Cámara': 'Dual 12MP',
+                    'Almacenamiento': '128GB',
+                    'Estado': 'Excelente'
+                }
+            },
+            {
+                id: 4,
+                name: 'iPhone 12 Pro',
+                category: 'reacondicionado',
+                price: 580000,
+                image: 'https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?w=400&h=400&fit=crop',
+                badge: 'Reacondicionado',
+                stock: true,
+                description: 'iPhone 12 Pro reacondicionado profesionalmente, como nuevo.',
+                specs: {
+                    'Pantalla': '6.1" Super Retina XDR',
+                    'Procesador': 'A14 Bionic',
+                    'Cámara': 'Triple 12MP',
+                    'Almacenamiento': '128GB',
+                    'Garantía': '90 días'
+                }
+            },
+            {
+                id: 5,
+                name: 'iPhone SE 2022',
+                category: 'sellado',
+                price: 450000,
+                image: 'https://images.unsplash.com/photo-1592286927505-c5b0e5470d1c?w=400&h=400&fit=crop',
+                badge: 'Sellado',
+                stock: true,
+                description: 'iPhone SE 2022 sellado, compacto y potente.',
+                specs: {
+                    'Pantalla': '4.7" Retina HD',
+                    'Procesador': 'A15 Bionic',
+                    'Cámara': '12MP',
+                    'Almacenamiento': '64GB',
+                    'Touch ID': 'Sí'
+                }
+            },
+            {
+                id: 6,
+                name: 'iPhone 11',
+                category: 'usado',
+                price: 420000,
+                image: 'https://images.unsplash.com/photo-1574755393849-623942496936?w=400&h=400&fit=crop',
+                badge: 'Usado',
+                stock: true,
+                description: 'iPhone 11 usado en muy buen estado, batería 85%.',
+                specs: {
+                    'Pantalla': '6.1" Liquid Retina',
+                    'Procesador': 'A13 Bionic',
+                    'Cámara': 'Dual 12MP',
+                    'Almacenamiento': '64GB',
+                    'Estado': 'Muy Bueno'
+                }
+            },
+            {
+                id: 7,
+                name: 'iPhone 14 Plus',
+                category: 'tester',
+                price: 950000,
+                image: 'https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=400&h=400&fit=crop',
+                badge: 'Tester',
+                stock: true,
+                description: 'iPhone 14 Plus tester, equipo de exhibición en perfectas condiciones.',
+                specs: {
+                    'Pantalla': '6.7" Super Retina XDR',
+                    'Procesador': 'A15 Bionic',
+                    'Cámara': 'Dual 12MP',
+                    'Almacenamiento': '128GB',
+                    'Condición': 'Exhibición'
+                }
+            },
+            {
+                id: 8,
+                name: 'iPhone 13 Pro',
+                category: 'reacondicionado',
+                price: 850000,
+                image: 'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop',
+                badge: 'Reacondicionado',
+                stock: true,
+                description: 'iPhone 13 Pro reacondicionado, batería nueva al 100%.',
+                specs: {
+                    'Pantalla': '6.1" Super Retina XDR',
+                    'Procesador': 'A15 Bionic',
+                    'Cámara': 'Triple 12MP',
+                    'Almacenamiento': '256GB',
+                    'ProMotion': '120Hz'
+                }
+            }
+        ];
+
+        // Cart State
+        let cart = JSON.parse(localStorage.getItem('midasCart')) || [];
+        let currentProduct = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(products);
+            updateCartUI();
+            initializeFilters();
+            initializeSearch();
+            initializeContactForm();
+        });
+
+        // Render Products
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById('productsGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            if (productsToRender.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('d-none');
+                return;
+            }
+
+            emptyState.classList.add('d-none');
+
+            grid.innerHTML = productsToRender.map(product => `
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" onclick="showProductModal(${product.id})">
+                        <div class="product-image">
+                            <span class="product-badge ${product.category}">${product.badge}</span>
+                            <img src="${product.image}" alt="${product.name}">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">${getCategoryName(product.category)}</div>
+                            <h3 class="product-title">${product.name}</h3>
+                            <div class="product-price">
+                                $${product.price.toLocaleString('es-AR')}
+                                <small>ARS</small>
+                            </div>
+                            <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart(${product.id})">
+                                <i class="fas fa-shopping-cart me-2"></i>
+                                Agregar al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Show Product Modal
+        function showProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            currentProduct = product;
+
+            document.getElementById('modalProductName').textContent = product.name;
+            document.getElementById('modalProductImage').src = product.image;
+            document.getElementById('modalProductImage').alt = product.name;
+            document.getElementById('modalProductPrice').textContent = `$${product.price.toLocaleString('es-AR')} ARS`;
+            document.getElementById('modalProductDescription').textContent = product.description;
+
+            const badge = document.getElementById('modalProductBadge');
+            badge.textContent = product.badge;
+            badge.className = `badge product-badge ${product.category}`;
+
+            const specsContainer = document.getElementById('modalProductSpecs');
+            specsContainer.innerHTML = Object.entries(product.specs).map(([key, value]) => `
+                <div class="spec-item">
+                    <span class="spec-label">${key}</span>
+                    <span class="spec-value">${value}</span>
+                </div>
+            `).join('');
+
+            const modal = new bootstrap.Modal(document.getElementById('productModal'));
+            modal.show();
+        }
+
+        // Add to Cart from Modal
+        function addToCartFromModal() {
+            if (currentProduct) {
+                addToCart(currentProduct.id);
+                const modal = bootstrap.Modal.getInstance(document.getElementById('productModal'));
+                modal.hide();
+            }
+        }
+
+        // Category Names
+        function getCategoryName(category) {
+            const names = {
+                'sellado': 'Sellado',
+                'usado': 'Usado',
+                'reacondicionado': 'Reacondicionado',
+                'tester': 'Tester'
+            };
+            return names[category] || category;
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+
+            saveCart();
+            updateCartUI();
+            showNotification('Producto agregado al carrito');
+        }
+
+        // Remove from Cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCart();
+            updateCartUI();
+        }
+
+        // Update Quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    saveCart();
+                    updateCartUI();
+                }
+            }
+        }
+
+        // Clear Cart
+        function clearCart() {
+            if (confirm('¿Estás seguro de vaciar el carrito?')) {
+                cart = [];
+                saveCart();
+                updateCartUI();
+            }
+        }
+
+        // Save Cart
+        function saveCart() {
+            localStorage.setItem('midasCart', JSON.stringify(cart));
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            cartCount.textContent = totalItems;
+            cartTotal.textContent = `$${totalPrice.toLocaleString('es-AR')}`;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Tu carrito está vacío</p>
+                    </div>
+                `;
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <img src="${item.image}" alt="${item.name}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 10px;">
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">${item.name}</h6>
+                                    <small class="text-muted">$${item.price.toLocaleString('es-AR')}</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between mt-3">
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(${item.id}, -1)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary" disabled>${item.quantity}</button>
+                                    <button class="btn btn-sm btn-outline-secondary" onclick="updateQuantity(${item.id}, 1)">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-sm btn-outline-danger" onclick="removeFromCart(${item.id})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Filters
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const category = this.dataset.category;
+                    const filtered = category === 'all'
+                        ? products
+                        : products.filter(p => p.category === category);
+
+                    renderProducts(filtered);
+                });
+            });
+        }
+
+        // Search
+        function initializeSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                const filtered = products.filter(p =>
+                    p.name.toLowerCase().includes(query)
+                );
+                renderProducts(filtered);
+            });
+        }
+
+        // Checkout
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+
+            const message = cart.map(item =>
+                `${item.name} (${item.category}) x${item.quantity} - $${(item.price * item.quantity).toLocaleString('es-AR')}`
+            ).join('%0A');
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const whatsappMessage = `Hola! Quiero hacer el siguiente pedido:%0A%0A${message}%0A%0ATotal: $${total.toLocaleString('es-AR')} ARS`;
+
+            window.open(`https://wa.me/5491234567890?text=${whatsappMessage}`, '_blank');
+        }
+
+        // Notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
+            notification.style.zIndex = '9999';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle me-2"></i>
+                ${message}
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Contact Form
+        function initializeContactForm() {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                const whatsappMessage = `Hola! Mi nombre es ${name}%0A%0AMotivo: ${subject}%0A%0AMensaje: ${message}%0A%0AEmail: ${email}%0ATeléfono: ${phone}`;
+
+                showNotification('¡Gracias por tu consulta! Te responderemos a la brevedad.');
+
+                setTimeout(() => {
+                    const openWhatsApp = confirm('¿Querés enviar tu consulta también por WhatsApp?');
+                    if (openWhatsApp) {
+                        window.open(`https://wa.me/5491234567890?text=${whatsappMessage}`, '_blank');
+                    }
+                }, 1000);
+
+                form.reset();
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
