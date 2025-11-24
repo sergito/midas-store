@@ -3,8 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midas Store | iPhones Sellados, Usados y Reacondicionados</title>
-    <meta name="description" content="Especialistas en productos Apple. iPhones sellados, usados, reacondicionados y testers. Envíos a todo el país.">
+
+    <!-- SEO Meta Tags -->
+    <title>Midas Store | Venta de iPhones Sellados, Usados y Reacondicionados en Argentina</title>
+    <meta name="description" content="Especialistas en venta de iPhones en Argentina. Ofrecemos iPhones sellados, usados, reacondicionados y testers al mejor precio. Envíos a todo el país con garantía. Medios de pago: efectivo, dólares y crypto USDT.">
+    <meta name="keywords" content="iphone, venta iphone, iphone sellado, iphone usado, iphone reacondicionado, comprar iphone argentina, iphone buenos aires, apple store, tienda apple, iphone barato, iphone garantía, envíos argentina">
+    <meta name="author" content="Midas Store">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.midasstore.com.ar/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.midasstore.com.ar/">
+    <meta property="og:title" content="Midas Store | iPhones Sellados, Usados y Reacondicionados">
+    <meta property="og:description" content="Especialistas en productos Apple. iPhones sellados, usados, reacondicionados y testers al mejor precio. Envíos a todo el país con garantía.">
+    <meta property="og:image" content="https://www.midasstore.com.ar/og-image.jpg">
+    <meta property="og:site_name" content="Midas Store">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.midasstore.com.ar/">
+    <meta name="twitter:title" content="Midas Store | iPhones Sellados, Usados y Reacondicionados">
+    <meta name="twitter:description" content="Especialistas en productos Apple. iPhones sellados, usados, reacondicionados y testers al mejor precio.">
+    <meta name="twitter:image" content="https://www.midasstore.com.ar/twitter-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Google Site Verification (agregar tu código cuando lo tengas) -->
+    <meta name="google-site-verification" content="your-verification-code">
+
+    <!-- Schema.org Markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Midas Store",
+      "description": "Especialistas en venta de iPhones sellados, usados, reacondicionados y testers en Argentina",
+      "url": "https://www.midasstore.com.ar",
+      "logo": "https://www.midasstore.com.ar/logo.png",
+      "image": "https://www.midasstore.com.ar/og-image.jpg",
+      "telephone": "+54-9-11-2345-6789",
+      "email": "contacto@midasstore.com.ar",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-34.6037",
+        "longitude": "-58.3816"
+      },
+      "priceRange": "$$$",
+      "paymentAccepted": ["Cash", "Cryptocurrency"],
+      "currenciesAccepted": "ARS, USD, USDT",
+      "openingHours": "Mo-Sa 10:00-20:00",
+      "sameAs": [
+        "https://instagram.com/midas.storeok"
+      ]
+    }
+    </script>
+
+    <!-- Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "iPhone",
+      "brand": {
+        "@type": "Brand",
+        "name": "Apple"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "ARS",
+        "lowPrice": "420000",
+        "highPrice": "1450000",
+        "offerCount": "8",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
 
     <!-- Bootstrap 5.3 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +102,9 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
@@ -40,8 +131,8 @@
 
         /* Navbar */
         .navbar-custom {
-            background: #fff;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            background: var(--dark-bg);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
             padding: 1rem 0;
             transition: all 0.3s ease;
         }
@@ -62,37 +153,75 @@
         }
 
         .navbar-brand span {
-            color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.8);
             font-weight: 400;
             font-size: 0.9rem;
             margin-left: 0.3rem;
         }
 
         .nav-link {
-            color: var(--text-dark) !important;
-            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 600;
             margin: 0 0.5rem;
-            transition: color 0.3s ease;
+            padding: 0.6rem 1.2rem !important;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-link:hover {
+            color: white !important;
+            background: rgba(127, 180, 72, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: white !important;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(127, 180, 72, 0.4);
+        }
+
+        .nav-link.active:hover {
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            transform: translateY(-2px);
+        }
+
+        .navbar-custom .btn-link {
+            color: white !important;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom .btn-link:hover {
             color: var(--primary-color) !important;
+            transform: scale(1.1);
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
         .cart-badge {
             position: absolute;
             top: -8px;
             right: -8px;
-            background: var(--primary-color);
+            background: #FF6B35;
             color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
+            border-radius: 12px;
+            min-width: 22px;
+            height: 22px;
+            padding: 0 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 700;
+            box-shadow: 0 2px 6px rgba(255, 107, 53, 0.4);
+            border: 2px solid white;
         }
 
         /* Hero Section */
@@ -647,6 +776,208 @@
             font-weight: 600;
         }
 
+        /* Comparison & Advanced Features */
+        .compare-toggle {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(127, 180, 72, 0.4);
+            transition: all 0.3s ease;
+            display: none;
+            font-size: 1rem;
+        }
+
+        .compare-toggle:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(127, 180, 72, 0.6);
+        }
+
+        .compare-toggle.show {
+            display: block;
+            animation: slideInRight 0.5s ease, comparePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes comparePulse {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(127, 180, 72, 0.4);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(127, 180, 72, 0.7);
+            }
+        }
+
+        .compare-text {
+            font-weight: 700;
+        }
+
+        .product-compare-checkbox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: #FF6B35;
+            transform: scale(1.4);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .product-compare-checkbox:hover {
+            transform: scale(1.6);
+            accent-color: #FF4500;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .compare-label {
+            position: absolute;
+            top: 8px;
+            left: 35px;
+            background: rgba(127, 180, 72, 0.95);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 9;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .product-card:hover .compare-label {
+            opacity: 1;
+        }
+
+        .stock-indicator {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .stock-low {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ff6b00;
+            border: 2px solid rgba(255, 193, 7, 0.5);
+        }
+
+        .stock-critical {
+            background: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+            border: 2px solid rgba(220, 53, 69, 0.5);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .advanced-filters {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .price-range-display {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+        }
+
+        .notify-stock-btn {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .notify-stock-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(23, 162, 184, 0.4);
+        }
+
+        .image-gallery {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-gallery-main {
+            width: 100%;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .image-gallery-thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .thumbnail-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail-img:hover,
+        .thumbnail-img.active {
+            border-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .zoom-container {
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+
+        .zoom-container.zoomed {
+            cursor: zoom-out;
+        }
+
+        .zoom-container.zoomed img {
+            transform: scale(2.5);
+        }
+
         /* Contact Section */
         .contact-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -866,6 +1197,241 @@
             height: 100%;
             border: none;
             border-radius: 20px;
+        }
+
+        /* FAQs Section */
+        .faqs-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            position: relative;
+        }
+
+        .faq-accordion .accordion-item {
+            background: white;
+            border: 2px solid #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-accordion .accordion-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(127, 180, 72, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .faq-accordion .accordion-button {
+            background: white;
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1.5rem 2rem;
+            border: none;
+            box-shadow: none;
+            transition: all 0.3s ease;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            box-shadow: 0 5px 20px rgba(127, 180, 72, 0.3);
+        }
+
+        .faq-accordion .accordion-button::after {
+            width: 1.5rem;
+            height: 1.5rem;
+            background-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-accordion .accordion-button:not(.collapsed)::after {
+            filter: brightness(0) invert(1);
+            transform: rotate(180deg);
+        }
+
+        .faq-accordion .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .faq-accordion .accordion-body {
+            padding: 1.5rem 2rem 2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .faq-accordion .accordion-body strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .faq-category {
+            display: inline-block;
+            background: rgba(127, 180, 72, 0.1);
+            color: var(--primary-color);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .faq-highlight-box {
+            background: linear-gradient(135deg, rgba(127, 180, 72, 0.05), rgba(155, 203, 92, 0.05));
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .faq-highlight-box i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 10px;
+        }
+
+        @keyframes skeleton-loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .skeleton-card {
+            height: 350px;
+            margin-bottom: 2rem;
+        }
+
+        .skeleton-text {
+            height: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Tooltips Enhancement */
+        .tooltip {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tooltip-inner {
+            background: var(--dark-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Bar */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Parallax Effect */
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(127, 180, 72, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(127, 180, 72, 0.6);
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        /* Counter Animation */
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+        }
+
+        /* Image Lazy Load Effect */
+        img.lazy-load {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        img.lazy-load.loaded {
+            opacity: 1;
         }
 
         /* Footer */
@@ -1225,11 +1791,14 @@
                         <a class="nav-link" href="#nosotros">Nosotros</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#faqs">FAQs</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-link text-dark position-relative me-3" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+                    <button class="btn btn-link position-relative me-3" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
                         <i class="fas fa-shopping-cart fa-lg"></i>
                         <span class="cart-badge" id="cartCount">0</span>
                     </button>
@@ -1337,6 +1906,22 @@
                 <p class="lead text-muted">Seleccioná el iPhone perfecto para vos</p>
             </div>
 
+            <!-- Comparison Info Banner -->
+            <div class="alert alert-info comparison-info-banner mb-4" id="comparisonBanner" style="border-left: 4px solid var(--primary-color); background: linear-gradient(135deg, rgba(127, 180, 72, 0.1), rgba(255, 255, 255, 0.95));">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-balance-scale me-3" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                        <div>
+                            <strong style="color: var(--primary-color);">💡 ¿Sabías que puedes comparar productos?</strong>
+                            <p class="mb-0 mt-1" style="font-size: 0.9rem;">
+                                Marca los <strong>checkboxes</strong> en las tarjetas de productos (hasta 3) y presiona el botón "Comparar" para ver las diferencias lado a lado.
+                            </p>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" onclick="document.getElementById('comparisonBanner').style.display='none'; localStorage.setItem('hideComparisonBanner', 'true');" aria-label="Cerrar"></button>
+                </div>
+            </div>
+
             <!-- Search Bar -->
             <div class="search-bar mx-auto mb-4">
                 <input type="text" id="searchInput" class="form-control" placeholder="Buscar iPhone...">
@@ -1356,6 +1941,51 @@
                     <button class="filter-btn" data-category="usado">Usados</button>
                     <button class="filter-btn" data-category="reacondicionado">Reacondicionados</button>
                     <button class="filter-btn" data-category="tester">Testers</button>
+                </div>
+            </div>
+
+            <!-- Advanced Filters -->
+            <div class="advanced-filters">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="filter-group">
+                            <label for="priceRange">
+                                <i class="fas fa-dollar-sign me-2"></i>Rango de Precio
+                            </label>
+                            <input type="range" class="form-range" id="priceRange" min="0" max="1500000" step="50000" value="1500000">
+                            <div class="price-range-display">
+                                Hasta $<span id="priceValue">1,500,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="filter-group">
+                            <label for="storageFilter">
+                                <i class="fas fa-hdd me-2"></i>Almacenamiento
+                            </label>
+                            <select class="form-select" id="storageFilter">
+                                <option value="all">Todos</option>
+                                <option value="64GB">64GB</option>
+                                <option value="128GB">128GB</option>
+                                <option value="256GB">256GB</option>
+                                <option value="512GB">512GB</option>
+                                <option value="1TB">1TB</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="filter-group">
+                            <label for="sortBy">
+                                <i class="fas fa-sort me-2"></i>Ordenar por
+                            </label>
+                            <select class="form-select" id="sortBy">
+                                <option value="default">Relevancia</option>
+                                <option value="price-asc">Precio: Menor a Mayor</option>
+                                <option value="price-desc">Precio: Mayor a Menor</option>
+                                <option value="name">Nombre A-Z</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1460,6 +2090,374 @@
                         <p class="feature-card-text">
                             Cada semana tenemos promos nuevas. Accesorios increíbles y súper útiles para vos o tus amigos.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-5 faqs-section" id="faqs">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" data-aos="fade-up">
+                    <i class="fas fa-question-circle me-2"></i> Preguntas Frecuentes
+                </div>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                    ¿Tenés Dudas? Te Ayudamos
+                </h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+                    Encontrá respuestas a las preguntas más comunes sobre nuestros productos y servicios
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion faq-accordion" id="faqAccordion">
+
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <span class="faq-icon"><i class="fab fa-apple"></i></span>
+                                    ¿Qué diferencia hay entre un iPhone sellado, usado, reacondicionado y tester?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>iPhone Sellado:</strong> Es un equipo completamente nuevo, en caja sellada de fábrica, con todos los accesorios originales (cable, cargador cuando aplique). Nunca fue usado y cuenta con garantía completa.<br><br>
+
+                                    <strong>iPhone Usado:</strong> Equipo que tuvo un uso previo pero está en excelente o muy buen estado cosmético y funcional. Verificamos que funcionen perfectamente todas sus características. La batería generalmente tiene entre 80-95% de salud.<br><br>
+
+                                    <strong>iPhone Reacondicionado:</strong> Equipos que fueron revisados profesionalmente, se les cambió la batería (100% de salud), se verificó todo el hardware y software, y se dejaron en condiciones casi como nuevos. Incluyen garantía de 90 días.<br><br>
+
+                                    <strong>iPhone Tester:</strong> Equipos que fueron usados como exhibición en tiendas Apple o distribuidores autorizados. Tienen muy poco uso real, están en perfectas condiciones y se venden a precio especial.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <span class="faq-icon"><i class="fas fa-shield-alt"></i></span>
+                                    ¿Los iPhones tienen garantía?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ¡Sí! Todos nuestros equipos cuentan con garantía:<br><br>
+
+                                    <div class="faq-highlight-box">
+                                        <i class="fas fa-check-circle"></i> <strong>Sellados:</strong> 1 año de garantía oficial Apple<br>
+                                        <i class="fas fa-check-circle"></i> <strong>Reacondicionados:</strong> 90 días de garantía por defectos de fábrica<br>
+                                        <i class="fas fa-check-circle"></i> <strong>Usados:</strong> 30 días de garantía por fallas de hardware<br>
+                                        <i class="fas fa-check-circle"></i> <strong>Testers:</strong> 90 días de garantía
+                                    </div>
+
+                                    La garantía NO cubre daños por mal uso, golpes, líquidos o modificaciones no autorizadas. Todos los equipos son probados exhaustivamente antes de la entrega.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <span class="faq-icon"><i class="fas fa-shipping-fast"></i></span>
+                                    ¿Hacen envíos? ¿Cómo funciona?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Sí, hacemos envíos a todo el país:<br><br>
+
+                                    <strong>📦 Envíos Nacionales:</strong><br>
+                                    Utilizamos <strong>Andreani</strong> para envíos a todo el país. Te proporcionamos el código de seguimiento para que puedas rastrear tu pedido en tiempo real. El tiempo de entrega es de 3-7 días hábiles dependiendo la zona.<br><br>
+
+                                    <strong>🏍️ Envíos en CABA y GBA:</strong><br>
+                                    Trabajamos con cadetes privados para entregas el mismo día o dentro de las 24-48 horas. Más rápido y seguro.<br><br>
+
+                                    <strong>💰 Costos:</strong><br>
+                                    El costo del envío varía según el destino y el peso del paquete. Consultanos por WhatsApp para un presupuesto exacto.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <span class="faq-icon"><i class="fas fa-credit-card"></i></span>
+                                    ¿Qué medios de pago aceptan?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aceptamos diversas formas de pago para tu comodidad:<br><br>
+
+                                    <div class="faq-highlight-box">
+                                        <i class="fas fa-money-bill-wave"></i> <strong>Efectivo:</strong> Pesos argentinos o dólares (mejor cotización)<br>
+                                        <i class="fab fa-bitcoin"></i> <strong>Criptomonedas:</strong> USDT (Tether), Binance Pay<br>
+                                        <i class="fas fa-exchange-alt"></i> <strong>Transferencia bancaria:</strong> CBU/CVU disponible
+                                    </div>
+
+                                    Para compras en efectivo podemos coordinar punto de encuentro en zona segura o retiro en nuestro local. <strong>No aceptamos tarjetas de crédito/débito en este momento.</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <span class="faq-icon"><i class="fas fa-question"></i></span>
+                                    ¿Los iPhones están liberados? ¿Funcionan con cualquier chip?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <strong>Sí, todos nuestros iPhones están 100% liberados de fábrica.</strong><br><br>
+
+                                    Esto significa que funcionan con cualquier compañía telefónica de Argentina y del mundo (Movistar, Claro, Personal, Tuenti, etc.). Podés usar tu chip actual sin ningún problema.<br><br>
+
+                                    Además, verificamos que:
+                                    <ul style="margin-top: 1rem;">
+                                        <li>No tengan bloqueo iCloud</li>
+                                        <li>No estén reportados como robados o perdidos</li>
+                                        <li>Tengan el IMEI limpio y verificable</li>
+                                        <li>Funcionen todas las bandas de red en Argentina</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="350">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    <span class="faq-icon"><i class="fas fa-box-open"></i></span>
+                                    ¿Qué incluye la compra de un iPhone?
+                                </button>
+                            </h3>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Dependiendo del tipo de equipo:<br><br>
+
+                                    <strong>iPhone Sellado:</strong><br>
+                                    ✅ Equipo en caja sellada original<br>
+                                    ✅ Cable Lightning o USB-C original<br>
+                                    ✅ Documentación y stickers Apple<br>
+                                    ✅ Herramienta para abrir SIM<br>
+                                    ⚠️ Algunos modelos no incluyen cargador (política de Apple desde iPhone 12)<br><br>
+
+                                    <strong>iPhone Usado/Reacondicionado/Tester:</strong><br>
+                                    ✅ El equipo iPhone<br>
+                                    ✅ Cable de carga (puede ser genérico compatible)<br>
+                                    ✅ Caja genérica de protección<br>
+                                    ⚠️ No incluye accesorios originales (se pueden adquirir por separado)<br><br>
+
+                                    <strong>¡Consultá por combos con accesorios!</strong> Tenemos fundas, cargadores, auriculares y protectores de pantalla.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 7 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    <span class="faq-icon"><i class="fas fa-battery-three-quarters"></i></span>
+                                    ¿Cómo verifico la salud de la batería en un iPhone usado?
+                                </button>
+                            </h3>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Siempre informamos el porcentaje de batería antes de la compra. Para verificarlo vos mismo:<br><br>
+
+                                    <strong>Pasos para verificar:</strong>
+                                    <ol style="margin-top: 1rem;">
+                                        <li>Abrí <strong>Ajustes</strong> en tu iPhone</li>
+                                        <li>Tocá en <strong>Batería</strong></li>
+                                        <li>Seleccioná <strong>Estado de la batería</strong></li>
+                                        <li>Mirá el porcentaje de <strong>Capacidad máxima</strong></li>
+                                    </ol>
+
+                                    <div class="faq-highlight-box mt-3">
+                                        <i class="fas fa-info-circle"></i> <strong>Recomendación:</strong><br>
+                                        • 100-90%: Excelente<br>
+                                        • 89-80%: Muy bueno (uso normal)<br>
+                                        • 79-70%: Aceptable (considerar cambio)<br>
+                                        • Menos de 70%: Recomendamos cambio de batería
+                                    </div>
+
+                                    Nuestros equipos reacondicionados siempre tienen batería nueva al 100%.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 8 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="450">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    <span class="faq-icon"><i class="fas fa-percent"></i></span>
+                                    ¿Tienen promociones o descuentos?
+                                </button>
+                            </h3>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ¡Sí! Tenemos promociones constantemente:<br><br>
+
+                                    🎉 <strong>Promos Semanales:</strong> Cada semana publicamos ofertas especiales en nuestro Instagram <a href="https://instagram.com/midas.storeok" target="_blank">@midas.storeok</a><br><br>
+
+                                    📦 <strong>Combos con Accesorios:</strong> Comprá tu iPhone + funda + protector de pantalla con descuento<br><br>
+
+                                    🔄 <strong>Programa de Cambio:</strong> Si tenés un iPhone para dar en parte de pago, consultanos. Aceptamos tu equipo usado como parte de pago.<br><br>
+
+                                    💰 <strong>Descuentos por Pago en Efectivo:</strong> Mejor precio pagando en efectivo o crypto.<br><br>
+
+                                    <strong>¡Seguinos en Instagram para no perderte ninguna promo!</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 9 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                    <span class="faq-icon"><i class="fas fa-undo"></i></span>
+                                    ¿Puedo devolver o cambiar el equipo si no me convence?
+                                </button>
+                            </h3>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Entendemos que comprar un iPhone es una inversión importante.<br><br>
+
+                                    <strong>Política de Devolución:</strong><br>
+                                    Tenés <strong>48 horas</strong> desde que recibís el equipo para probarlo. Si encontrás algún defecto de fábrica o falla que no fue informada, podés cambiarlo por otro equipo similar o solicitar la devolución del dinero.<br><br>
+
+                                    <strong>Condiciones:</strong>
+                                    <ul style="margin-top: 1rem;">
+                                        <li>El equipo debe estar en las mismas condiciones que lo recibiste</li>
+                                        <li>Con todos los accesorios y embalaje original</li>
+                                        <li>Sin golpes, rayones o daños nuevos</li>
+                                        <li>La garantía NO cubre arrepentimiento de compra, solo defectos</li>
+                                    </ul>
+
+                                    <div class="faq-highlight-box">
+                                        <i class="fas fa-handshake"></i> <strong>Nuestro compromiso:</strong> Queremos que estés 100% satisfecho con tu compra. Trabajamos con transparencia y honestidad.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 10 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="550">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                    <span class="faq-icon"><i class="fas fa-mobile-alt"></i></span>
+                                    ¿Puedo reservar un iPhone? ¿Cómo funciona?
+                                </button>
+                            </h3>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ¡Sí, podés reservar tu iPhone!<br><br>
+
+                                    <strong>Proceso de Reserva:</strong>
+                                    <ol style="margin-top: 1rem;">
+                                        <li>Contactanos por WhatsApp o Instagram</li>
+                                        <li>Indicános el modelo que te interesa</li>
+                                        <li>Te enviamos fotos reales, videos y specs del equipo</li>
+                                        <li>Para reservar, abonás una <strong>seña del 20-30%</strong> del precio total</li>
+                                        <li>Tenés hasta <strong>7 días</strong> para completar el pago</li>
+                                        <li>El resto se abona al momento de la entrega o antes del envío</li>
+                                    </ol>
+
+                                    ⚠️ <strong>Importante:</strong> Si no completás el pago en el plazo acordado, la seña queda como crédito a favor para futuras compras (no se devuelve en efectivo).<br><br>
+
+                                    <strong>Stock limitado:</strong> Algunos modelos se agotan rápido. ¡Consultá disponibilidad!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 11 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                    <span class="faq-icon"><i class="fas fa-tools"></i></span>
+                                    ¿Hacen reparaciones o servicio técnico?
+                                </button>
+                            </h3>
+                            <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Actualmente nos especializamos en la <strong>venta de equipos</strong>, pero tenemos contacto con técnicos de confianza que pueden ayudarte con:<br><br>
+
+                                    <div class="row text-center">
+                                        <div class="col-6 mb-3">
+                                            🔋 Cambio de batería
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            📱 Cambio de pantalla
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            🔊 Reparación de audio
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            📸 Reparación de cámara
+                                        </div>
+                                    </div>
+
+                                    Si compraste tu iPhone con nosotros y necesitás reparación durante el período de garantía, nos encargamos de gestionarlo sin costo.<br><br>
+
+                                    <strong>Consultanos por WhatsApp</strong> y te derivamos con técnicos certificados que trabajan con nosotros.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 12 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="650">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+                                    <span class="faq-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                    ¿Tienen local físico? ¿Puedo ver los equipos antes de comprar?
+                                </button>
+                            </h3>
+                            <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Trabajamos principalmente <strong>online</strong> para ofrecerte mejores precios (sin costos de local), pero <strong>sí podés ver los equipos antes de comprar</strong>.<br><br>
+
+                                    <strong>Opciones para conocer los equipos:</strong><br><br>
+
+                                    📹 <strong>Videollamada:</strong> Te mostramos el equipo en vivo por WhatsApp o Instagram, probamos todas las funciones, te mostramos el IMEI, batería, etc.<br><br>
+
+                                    📸 <strong>Fotos y Videos Reales:</strong> Te enviamos material del equipo específico que vas a recibir (no fotos genéricas).<br><br>
+
+                                    🤝 <strong>Punto de Encuentro:</strong> Para CABA y GBA, podemos coordinar encuentro en zona segura (shopping, cafetería) donde podés ver y probar el equipo antes de pagar.<br><br>
+
+                                    <div class="faq-highlight-box">
+                                        <i class="fas fa-shield-alt"></i> <strong>Seguridad:</strong> Siempre en lugares públicos y seguros. Trabajamos con total transparencia.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Additional Help -->
+                    <div class="text-center mt-5" data-aos="fade-up">
+                        <div class="faq-highlight-box">
+                            <h4 class="mb-3">
+                                <i class="fas fa-headset"></i> ¿No encontraste lo que buscabas?
+                            </h4>
+                            <p class="mb-4">Estamos para ayudarte. Contactanos directamente y te respondemos todas tus dudas.</p>
+                            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                                <a href="https://wa.me/5491234567890?text=Hola!%20Tengo%20una%20consulta" class="btn btn-primary-custom" target="_blank">
+                                    <i class="fab fa-whatsapp me-2"></i> Consultar por WhatsApp
+                                </a>
+                                <a href="https://instagram.com/midas.storeok" class="btn btn-secondary-custom" target="_blank" style="background: linear-gradient(135deg, #833AB4, #E1306C); border: none;">
+                                    <i class="fab fa-instagram me-2"></i> Seguinos en Instagram
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1638,6 +2636,7 @@
                         <li><a href="#inicio"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Inicio</a></li>
                         <li><a href="#productos"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Productos</a></li>
                         <li><a href="#nosotros"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Nosotros</a></li>
+                        <li><a href="#faqs"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>FAQs</a></li>
                         <li><a href="#contacto"><i class="fas fa-chevron-right me-2" style="font-size: 0.7rem;"></i>Contacto</a></li>
                     </ul>
                 </div>
@@ -1705,7 +2704,7 @@
         </div>
     </div>
 
-    <!-- Product Detail Modal -->
+    <!-- Product Detail Modal with Gallery -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -1716,11 +2715,19 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img id="modalProductImage" src="" alt="" class="product-detail-img">
+                            <div class="image-gallery">
+                                <div class="zoom-container" id="zoomContainer">
+                                    <img id="modalProductImage" src="" alt="" class="product-detail-img image-gallery-main">
+                                </div>
+                                <div class="image-gallery-thumbnails" id="imageThumbnails">
+                                    <!-- Thumbnails will be loaded here -->
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <span class="badge" id="modalProductBadge"></span>
+                                <div id="modalStockIndicator"></div>
                             </div>
                             <h4 class="mb-3" id="modalProductPrice"></h4>
                             <p id="modalProductDescription"></p>
@@ -1730,9 +2737,9 @@
                                 <!-- Specs will be loaded here -->
                             </div>
 
-                            <button class="btn btn-primary-custom w-100 mt-4" onclick="addToCartFromModal()">
-                                <i class="fas fa-shopping-cart me-2"></i> Agregar al Carrito
-                            </button>
+                            <div id="modalProductActions" class="mt-4">
+                                <!-- Actions will be loaded here -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1740,13 +2747,79 @@
         </div>
     </div>
 
+    <!-- Compare Products Modal -->
+    <div class="modal fade" id="compareModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-balance-scale me-2"></i>Comparar Productos
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="compareContent" class="table-responsive">
+                        <!-- Comparison table will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stock Notification Modal -->
+    <div class="modal fade" id="notifyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-bell me-2"></i>Notificarme cuando llegue stock
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Te avisaremos por email cuando tengamos stock de <strong id="notifyProductName"></strong></p>
+                    <form id="notifyForm">
+                        <div class="mb-3">
+                            <label for="notifyName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="notifyName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notifyEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="notifyEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">
+                            <i class="fas fa-paper-plane me-2"></i>Enviar Notificación
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Toggle Button -->
+    <button class="compare-toggle" id="compareToggle" onclick="openCompareModal()">
+        <i class="fas fa-balance-scale me-2"></i>
+        <span class="compare-text">Comparar Productos (<span id="compareCount">0</span>)</span>
+    </button>
+
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/5491234567890?text=Hola!%20Vengo%20desde%20la%20web" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Loading Bar -->
+    <div class="loading-bar" id="loadingBar"></div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS - Animate On Scroll Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         // Products Database - iPhones
@@ -1757,8 +2830,14 @@
                 category: 'sellado',
                 price: 1450000,
                 image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop'
+                ],
                 badge: 'Sellado',
                 stock: true,
+                stockCount: 3,
                 description: 'iPhone 15 Pro Max nuevo en caja sellada. Incluye todos los accesorios originales.',
                 specs: {
                     'Pantalla': '6.7" Super Retina XDR',
@@ -1774,8 +2853,13 @@
                 category: 'sellado',
                 price: 1150000,
                 image: 'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1632661674446-b0b789841ae4?w=400&h=400&fit=crop'
+                ],
                 badge: 'Sellado',
                 stock: true,
+                stockCount: 5,
                 description: 'iPhone 14 Pro sellado con garantía oficial Apple.',
                 specs: {
                     'Pantalla': '6.1" Super Retina XDR',
@@ -1791,8 +2875,13 @@
                 category: 'usado',
                 price: 650000,
                 image: 'https://images.unsplash.com/photo-1632661674446-b0b789841ae4?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1632661674446-b0b789841ae4?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1574755393849-623942496936?w=400&h=400&fit=crop'
+                ],
                 badge: 'Usado',
                 stock: true,
+                stockCount: 2,
                 description: 'iPhone 13 en excelente estado, batería al 90%.',
                 specs: {
                     'Pantalla': '6.1" Super Retina XDR',
@@ -1808,8 +2897,13 @@
                 category: 'reacondicionado',
                 price: 580000,
                 image: 'https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1592286927505-c5b0e5470d1c?w=400&h=400&fit=crop'
+                ],
                 badge: 'Reacondicionado',
                 stock: true,
+                stockCount: 8,
                 description: 'iPhone 12 Pro reacondicionado profesionalmente, como nuevo.',
                 specs: {
                     'Pantalla': '6.1" Super Retina XDR',
@@ -1825,8 +2919,12 @@
                 category: 'sellado',
                 price: 450000,
                 image: 'https://images.unsplash.com/photo-1592286927505-c5b0e5470d1c?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1592286927505-c5b0e5470d1c?w=400&h=400&fit=crop'
+                ],
                 badge: 'Sellado',
                 stock: true,
+                stockCount: 12,
                 description: 'iPhone SE 2022 sellado, compacto y potente.',
                 specs: {
                     'Pantalla': '4.7" Retina HD',
@@ -1842,8 +2940,12 @@
                 category: 'usado',
                 price: 420000,
                 image: 'https://images.unsplash.com/photo-1574755393849-623942496936?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1574755393849-623942496936?w=400&h=400&fit=crop'
+                ],
                 badge: 'Usado',
-                stock: true,
+                stock: false,
+                stockCount: 0,
                 description: 'iPhone 11 usado en muy buen estado, batería 85%.',
                 specs: {
                     'Pantalla': '6.1" Liquid Retina',
@@ -1859,8 +2961,13 @@
                 category: 'tester',
                 price: 950000,
                 image: 'https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1678652197831-2d180705cd2c?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop'
+                ],
                 badge: 'Tester',
                 stock: true,
+                stockCount: 1,
                 description: 'iPhone 14 Plus tester, equipo de exhibición en perfectas condiciones.',
                 specs: {
                     'Pantalla': '6.7" Super Retina XDR',
@@ -1876,8 +2983,13 @@
                 category: 'reacondicionado',
                 price: 850000,
                 image: 'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop',
+                images: [
+                    'https://images.unsplash.com/photo-1663499482523-1228e1f91a2d?w=400&h=400&fit=crop',
+                    'https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?w=400&h=400&fit=crop'
+                ],
                 badge: 'Reacondicionado',
                 stock: true,
+                stockCount: 4,
                 description: 'iPhone 13 Pro reacondicionado, batería nueva al 100%.',
                 specs: {
                     'Pantalla': '6.1" Super Retina XDR',
@@ -1893,6 +3005,12 @@
         let cart = JSON.parse(localStorage.getItem('midasCart')) || [];
         let currentProduct = null;
 
+        // Comparison State
+        let compareList = [];
+
+        // Stock Notifications
+        let stockNotifications = JSON.parse(localStorage.getItem('stockNotifications')) || [];
+
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             renderProducts(products);
@@ -1900,7 +3018,18 @@
             initializeFilters();
             initializeSearch();
             initializeContactForm();
+            initializeAdvancedFilters();
+            initializeStockNotifications();
+            initializeComparisonBanner();
         });
+
+        // Initialize Comparison Banner
+        function initializeComparisonBanner() {
+            const banner = document.getElementById('comparisonBanner');
+            if (banner && localStorage.getItem('hideComparisonBanner') === 'true') {
+                banner.style.display = 'none';
+            }
+        }
 
         // Render Products
         function renderProducts(productsToRender) {
@@ -1915,9 +3044,18 @@
 
             emptyState.classList.add('d-none');
 
-            grid.innerHTML = productsToRender.map(product => `
+            grid.innerHTML = productsToRender.map(product => {
+                const stockIndicator = getStockIndicator(product);
+                const isCompared = compareList.includes(product.id);
+
+                return `
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product-card" onclick="showProductModal(${product.id})">
+                        <input type="checkbox" class="product-compare-checkbox"
+                               onclick="event.stopPropagation(); toggleCompare(${product.id})"
+                               ${isCompared ? 'checked' : ''}
+                               title="Seleccionar para comparar">
+                        <span class="compare-label">✓ Comparar</span>
                         <div class="product-image">
                             <span class="product-badge ${product.category}">${product.badge}</span>
                             <img src="${product.image}" alt="${product.name}">
@@ -1929,14 +3067,29 @@
                                 $${product.price.toLocaleString('es-AR')}
                                 <small>ARS</small>
                             </div>
-                            <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart(${product.id})">
-                                <i class="fas fa-shopping-cart me-2"></i>
-                                Agregar al Carrito
+                            ${stockIndicator}
+                            <button class="btn-add-cart" onclick="event.stopPropagation(); ${product.stock ? `addToCart(${product.id})` : `showNotifyModal(${product.id})`}">
+                                <i class="fas fa-${product.stock ? 'shopping-cart' : 'bell'} me-2"></i>
+                                ${product.stock ? 'Agregar al Carrito' : 'Avisarme'}
                             </button>
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
+        }
+
+        // Get Stock Indicator
+        function getStockIndicator(product) {
+            if (!product.stock) {
+                return '<div class="stock-indicator stock-critical"><i class="fas fa-times-circle me-1"></i>Sin Stock</div>';
+            }
+            if (product.stockCount <= 2) {
+                return `<div class="stock-indicator stock-critical"><i class="fas fa-fire me-1"></i>¡Solo quedan ${product.stockCount}!</div>`;
+            }
+            if (product.stockCount <= 5) {
+                return `<div class="stock-indicator stock-low"><i class="fas fa-exclamation-triangle me-1"></i>¡Quedan ${product.stockCount}!</div>`;
+            }
+            return '';
         }
 
         // Show Product Modal
@@ -1956,6 +3109,22 @@
             badge.textContent = product.badge;
             badge.className = `badge product-badge ${product.category}`;
 
+            // Stock Indicator
+            const stockIndicatorContainer = document.getElementById('modalStockIndicator');
+            stockIndicatorContainer.innerHTML = getStockIndicator(product);
+
+            // Image Gallery Thumbnails
+            const thumbnailsContainer = document.getElementById('imageThumbnails');
+            if (product.images && product.images.length > 1) {
+                thumbnailsContainer.innerHTML = product.images.map((img, index) => `
+                    <img src="${img}" alt="${product.name} ${index + 1}"
+                         class="thumbnail-img ${index === 0 ? 'active' : ''}"
+                         onclick="changeProductImage('${img}', event)">
+                `).join('');
+            } else {
+                thumbnailsContainer.innerHTML = '';
+            }
+
             const specsContainer = document.getElementById('modalProductSpecs');
             specsContainer.innerHTML = Object.entries(product.specs).map(([key, value]) => `
                 <div class="spec-item">
@@ -1964,8 +3133,57 @@
                 </div>
             `).join('');
 
+            // Product Actions
+            const actionsContainer = document.getElementById('modalProductActions');
+            if (product.stock) {
+                actionsContainer.innerHTML = `
+                    <button class="btn btn-primary-custom w-100" onclick="addToCartFromModal()">
+                        <i class="fas fa-shopping-cart me-2"></i> Agregar al Carrito
+                    </button>
+                `;
+            } else {
+                actionsContainer.innerHTML = `
+                    <button class="notify-stock-btn w-100" onclick="showNotifyModal(${product.id})">
+                        <i class="fas fa-bell me-2"></i> Avisarme cuando haya stock
+                    </button>
+                `;
+            }
+
+            // Initialize Zoom
+            initializeImageZoom();
+
             const modal = new bootstrap.Modal(document.getElementById('productModal'));
             modal.show();
+        }
+
+        // Change Product Image
+        function changeProductImage(imgSrc, event) {
+            document.getElementById('modalProductImage').src = imgSrc;
+
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail-img').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Initialize Image Zoom
+        function initializeImageZoom() {
+            const zoomContainer = document.getElementById('zoomContainer');
+            const img = document.getElementById('modalProductImage');
+
+            zoomContainer.onclick = function() {
+                this.classList.toggle('zoomed');
+            };
+
+            img.onmousemove = function(e) {
+                if (!zoomContainer.classList.contains('zoomed')) return;
+
+                const rect = this.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                this.style.transformOrigin = `${x}% ${y}%`;
+            };
         }
 
         // Add to Cart from Modal
@@ -2182,6 +3400,225 @@
             });
         }
 
+        // ========================================
+        // NUEVAS FEATURES PROFESIONALES
+        // ========================================
+
+        // 1. COMPARADOR DE PRODUCTOS
+        function toggleCompare(productId) {
+            const index = compareList.indexOf(productId);
+
+            if (index > -1) {
+                compareList.splice(index, 1);
+            } else {
+                if (compareList.length >= 3) {
+                    showNotification('Solo podés comparar hasta 3 productos');
+                    return;
+                }
+                compareList.push(productId);
+            }
+
+            updateCompareButton();
+            renderProducts(getCurrentFilteredProducts());
+        }
+
+        function updateCompareButton() {
+            const compareBtn = document.getElementById('compareToggle');
+            const compareCount = document.getElementById('compareCount');
+
+            compareCount.textContent = compareList.length;
+
+            if (compareList.length > 0) {
+                compareBtn.classList.add('show');
+            } else {
+                compareBtn.classList.remove('show');
+            }
+        }
+
+        function getCurrentFilteredProducts() {
+            const activeFilter = document.querySelector('.filter-btn.active');
+            const category = activeFilter ? activeFilter.dataset.category : 'all';
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+
+            let filtered = category === 'all' ? products : products.filter(p => p.category === category);
+
+            if (searchQuery) {
+                filtered = filtered.filter(p => p.name.toLowerCase().includes(searchQuery));
+            }
+
+            return applyAdvancedFilters(filtered);
+        }
+
+        function openCompareModal() {
+            if (compareList.length < 2) {
+                showNotification('Seleccioná al menos 2 productos para comparar');
+                return;
+            }
+
+            const compareProducts = products.filter(p => compareList.includes(p.id));
+            const allSpecs = new Set();
+
+            compareProducts.forEach(p => {
+                Object.keys(p.specs).forEach(spec => allSpecs.add(spec));
+            });
+
+            const compareContent = document.getElementById('compareContent');
+            compareContent.innerHTML = `
+                <table class="table table-bordered table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th width="25%">Característica</th>
+                            ${compareProducts.map(p => `
+                                <th width="${75 / compareProducts.length}%">
+                                    <img src="${p.image}" alt="${p.name}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px; margin-bottom: 10px;">
+                                    <div><strong>${p.name}</strong></div>
+                                    <div class="text-success">$${p.price.toLocaleString('es-AR')}</div>
+                                </th>
+                            `).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Condición</strong></td>
+                            ${compareProducts.map(p => `<td><span class="badge product-badge ${p.category}">${p.badge}</span></td>`).join('')}
+                        </tr>
+                        <tr>
+                            <td><strong>Stock</strong></td>
+                            ${compareProducts.map(p => `<td>${getStockIndicator(p)}</td>`).join('')}
+                        </tr>
+                        ${Array.from(allSpecs).map(spec => `
+                            <tr>
+                                <td><strong>${spec}</strong></td>
+                                ${compareProducts.map(p => `<td>${p.specs[spec] || '-'}</td>`).join('')}
+                            </tr>
+                        `).join('')}
+                        <tr>
+                            <td><strong>Acción</strong></td>
+                            ${compareProducts.map(p => `
+                                <td>
+                                    ${p.stock
+                                        ? `<button class="btn btn-sm btn-primary-custom" onclick="addToCart(${p.id})">
+                                            <i class="fas fa-cart-plus"></i> Agregar
+                                           </button>`
+                                        : `<button class="btn btn-sm notify-stock-btn" onclick="showNotifyModal(${p.id})">
+                                            <i class="fas fa-bell"></i> Avisar
+                                           </button>`
+                                    }
+                                </td>
+                            `).join('')}
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center mt-3">
+                    <button class="btn btn-outline-secondary" onclick="clearComparison()">
+                        <i class="fas fa-times me-2"></i>Limpiar Comparación
+                    </button>
+                </div>
+            `;
+
+            const modal = new bootstrap.Modal(document.getElementById('compareModal'));
+            modal.show();
+        }
+
+        function clearComparison() {
+            compareList = [];
+            updateCompareButton();
+            renderProducts(getCurrentFilteredProducts());
+            bootstrap.Modal.getInstance(document.getElementById('compareModal')).hide();
+        }
+
+        // 2. FILTROS AVANZADOS
+        function initializeAdvancedFilters() {
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            const storageFilter = document.getElementById('storageFilter');
+            const sortBy = document.getElementById('sortBy');
+
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = parseInt(this.value).toLocaleString('es-AR');
+                applyFilters();
+            });
+
+            storageFilter.addEventListener('change', applyFilters);
+            sortBy.addEventListener('change', applyFilters);
+        }
+
+        function applyFilters() {
+            renderProducts(getCurrentFilteredProducts());
+        }
+
+        function applyAdvancedFilters(productsList) {
+            const maxPrice = parseInt(document.getElementById('priceRange').value);
+            const storage = document.getElementById('storageFilter').value;
+            const sortOrder = document.getElementById('sortBy').value;
+
+            let filtered = productsList.filter(p => p.price <= maxPrice);
+
+            if (storage !== 'all') {
+                filtered = filtered.filter(p => {
+                    const storageSpec = p.specs['Almacenamiento'];
+                    return storageSpec && storageSpec.includes(storage);
+                });
+            }
+
+            switch(sortOrder) {
+                case 'price-asc':
+                    filtered.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-desc':
+                    filtered.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    filtered.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+            }
+
+            return filtered;
+        }
+
+        // 3. NOTIFICACIONES DE STOCK
+        function initializeStockNotifications() {
+            const notifyForm = document.getElementById('notifyForm');
+
+            notifyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('notifyName').value;
+                const email = document.getElementById('notifyEmail').value;
+                const productId = notifyForm.dataset.productId;
+                const product = products.find(p => p.id == productId);
+
+                const notification = {
+                    name,
+                    email,
+                    productId,
+                    productName: product.name,
+                    date: new Date().toISOString()
+                };
+
+                stockNotifications.push(notification);
+                localStorage.setItem('stockNotifications', JSON.stringify(stockNotifications));
+
+                showNotification(`¡Listo! Te avisaremos cuando llegue el ${product.name}`);
+
+                // Enviar por WhatsApp al vendedor
+                const whatsappMessage = `Nueva notificación de stock:%0A%0ACliente: ${name}%0AEmail: ${email}%0AProducto: ${product.name}`;
+                window.open(`https://wa.me/5491234567890?text=${whatsappMessage}`, '_blank');
+
+                bootstrap.Modal.getInstance(document.getElementById('notifyModal')).hide();
+                notifyForm.reset();
+            });
+        }
+
+        function showNotifyModal(productId) {
+            const product = products.find(p => p.id === productId);
+            document.getElementById('notifyProductName').textContent = product.name;
+            document.getElementById('notifyForm').dataset.productId = productId;
+
+            const modal = new bootstrap.Modal(document.getElementById('notifyModal'));
+            modal.show();
+        }
+
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -2195,6 +3632,307 @@
                 }
             });
         });
+
+        // ========================================
+        // MICROINTERACCIONES Y ANIMACIONES MODERNAS
+        // ========================================
+
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100,
+            delay: 50
+        });
+
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/Hide Scroll to Top Button
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('show');
+            } else {
+                scrollButton.classList.remove('show');
+            }
+
+            // Update Loading Bar on Scroll
+            updateLoadingBar();
+
+            // Navbar background on scroll
+            updateNavbarOnScroll();
+        });
+
+        // Update Loading Bar
+        function updateLoadingBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('loadingBar').style.width = scrolled + '%';
+        }
+
+        // Navbar Background on Scroll
+        function updateNavbarOnScroll() {
+            const navbar = document.querySelector('.navbar-custom');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 5px 30px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+        }
+
+        // Initialize Bootstrap Tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Lazy Loading Images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const image = entry.target;
+                        image.src = image.dataset.src || image.src;
+                        image.classList.add('loaded');
+                        imageObserver.unobserve(image);
+                    }
+                });
+            });
+
+            // Observe all images with lazy-load class
+            document.querySelectorAll('img.lazy-load').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Counter Animation for Stats
+        function animateCounter(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Observe counters and animate when visible
+        if ('IntersectionObserver' in window) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const endValue = parseInt(counter.getAttribute('data-count')) || 100;
+                        animateCounter(counter, 0, endValue, 2000);
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.counter').forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        }
+
+        // Active Nav Link on Scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 100;
+                const sectionId = current.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+                if (navLink) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLink.classList.add('active');
+                    } else {
+                        navLink.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Add Pulse Animation to WhatsApp Button
+        setInterval(() => {
+            const whatsappBtn = document.querySelector('.whatsapp-float');
+            if (whatsappBtn) {
+                whatsappBtn.classList.add('pulse');
+                setTimeout(() => {
+                    whatsappBtn.classList.remove('pulse');
+                }, 2000);
+            }
+        }, 5000);
+
+        // Product Card Tilt Effect (subtle 3D effect)
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            });
+
+            card.addEventListener('mouseleave', function() {
+                card.style.transform = '';
+            });
+        });
+
+        // Enhanced Search with debounce
+        let searchTimeout;
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    const query = e.target.value.toLowerCase();
+                    const filtered = products.filter(p =>
+                        p.name.toLowerCase().includes(query)
+                    );
+                    renderProducts(filtered);
+                }, 300); // Debounce 300ms
+            });
+        }
+
+        // Loading Animation on Page Load
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease-in-out';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add ripple effect to buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const ripple = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            ripple.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            ripple.classList.add('ripple');
+
+            const existingRipple = button.getElementsByClassName('ripple')[0];
+            if (existingRipple) {
+                existingRipple.remove();
+            }
+
+            button.appendChild(ripple);
+        }
+
+        // Add ripple to all buttons
+        document.querySelectorAll('.btn, .filter-btn').forEach(button => {
+            button.addEventListener('click', createRipple);
+        });
+
+        // Add ripple CSS dynamically
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+
+            button {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Enhanced Form Validation with Animation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+                field.addEventListener('invalid', function(e) {
+                    e.preventDefault();
+                    field.classList.add('shake');
+                    setTimeout(() => field.classList.remove('shake'), 500);
+                });
+
+                field.addEventListener('blur', function() {
+                    if (field.validity.valid) {
+                        field.style.borderColor = 'var(--primary-color)';
+                    }
+                });
+            });
+        }
+
+        // Add shake animation CSS
+        const shakeStyle = document.createElement('style');
+        shakeStyle.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+
+            .shake {
+                animation: shake 0.5s;
+                border-color: #dc3545 !important;
+            }
+        `;
+        document.head.appendChild(shakeStyle);
+
+        // Console Easter Egg
+        console.log('%c🎉 Bienvenido a Midas Store! 🍎', 'color: #7FB448; font-size: 20px; font-weight: bold;');
+        console.log('%c¿Buscando algo especial? Contactanos por WhatsApp 📱', 'color: #25D366; font-size: 14px;');
+        console.log('%chttps://wa.me/5491234567890', 'color: #666; font-size: 12px;');
+
+        // Performance: Preload important images
+        const preloadImages = [
+            'https://images.unsplash.com/photo-1592286927505-c5b0e5470d1c?w=700&h=700&fit=crop',
+            'https://images.unsplash.com/photo-1611472173362-3f53dbd65d80?w=700&h=700&fit=crop'
+        ];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // Update year in footer dynamically
+        const currentYear = new Date().getFullYear();
+        const yearElements = document.querySelectorAll('.current-year');
+        yearElements.forEach(el => {
+            el.textContent = currentYear;
+        });
+
+        console.log('%c✅ Website fully loaded and optimized!', 'color: #7FB448; font-weight: bold;');
     </script>
 </body>
 </html>
